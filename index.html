@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Minimaker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> 
+
+<!-- 
+
+Hallo! Bedankt dat je mijn website bekijkt, hier een paar dingen over de website die je misschien zou willen weten. 
+
+- De legominimaker is een kleine interactieve ervaring waarbij je je eigen lego minifiguur kan maken. Het doel van de website was om te leren een website te maken
+  waar je keuzes opgeslagen worden en vervolgens gebruikt worden voor een eindresultaat.
+- De website is exclusief gemaakt voor een resolutie van 1920 x 1080 of simpelweg een beeldscherm met een 4:3 ratio.   
+- Er zijn een paar bronnen gebruikt, deze zijn hieronder opgeschreven. 
+
+Bronnen:
+- https://youtu.be/1YjybCS4B2U?si=-JS06nXjb5KwQhsM, https://youtu.be/PfzA1CX3aI4?si=ybFodJB0JaQo_HGv (twee videos die me helpten de willekeurige afbeeldingen te krijgen voor mijn randomizer knop)
+- https://youtu.be/3xlws5og44U?si=cz49wyMMVodfNs2Z (Een tutorial voor gebruik van audio files in JS, voornamelijk gebruikt om de audio spelers te maken)
+- https://www.lego.com/en-gb/pick-and-build/create-a-minifigure?open=true (voor afbeeldingen en inspiratie)
+- Chatgpt (Voor hulp met foutmeldingen en structuur)
+
+-->
+
+<nav>
+    <a href="index.html"><img src="img/LegoMinimakerLogoBlack.png" alt="White Lego Minimaker Logo"></a>
+</nav>
+
+<div class="background">
+    <img src="img/legobackground1.jpg" alt="Background" class="bg-img">
+    <button id="sound-button" class="sound-icon"><img src="img/volume.png" alt="volume on icon"></button>
+
+    <div id="start-screen" class="active">
+        <button id="start-button">Start Building!</button> 
+        <button id="randomizer-button">Generate Random Minifigure</button>
+    </div>
+
+    <section id="head-choice" class="hidden">
+        <h1>What head type?</h1> 
+        <p>1/4</p>
+        <div class="button-row">
+        <button><img src="img/headpiece_malesmile.webp" alt="male lego smiling"></button>
+        <button><img src="img/headpiece_femalesmile.webp" alt="female lego head smiling"></button>
+        <button><img src="img/headpiece_battlelook.webp" alt="angry lego head frowning"></button>
+        <button><img src="img/headpiece_smugglasses.webp" alt="cool lego head with sunglasses"></button> 
+        </div>
+    </section> 
+
+    <section id="headwear-choice" class="hidden">
+        <h2>What hair type?</h2>
+        <p>2/4</p>
+        <div class="button-row">
+        <button><img src="img/headwearpiece_brownflathair.webp" alt="lego flat brown hair"></button>
+        <button><img src="img/headwearpiece_brownspikedhair.webp" alt="lego spiked brown hair"></button>
+        <button><img src="img/headwearpiece_blondhairtail.webp" alt="lego blonde ponytail"></button>
+        <button><img src="img/headwearpiece_blackemohair.webp" alt="lego black long emo hair"></button>
+        </div>
+    </section> 
+
+    <section id="torso-choice" class="hidden">
+        <h3>What torso type?</h3> 
+        <p>3/4</p>
+        <div class="button-row">
+        <button><img src="img/torsopiece_casualhoodie.webp" alt="lego hoodie torso"></button>
+        <button><img src="img/torsopiece_coolvest.webp" alt="lego denim jacket torso"></button>
+        <button><img src="img/torsopiece_policeuniform.webp" alt="lego police uniform torso"></button>
+        <button><img src="img/torsopiece_blacksuit.webp" alt="lego fancy black suit torso"></button>
+        </div>
+    </section> 
+
+    <section id="pants-choice" class="hidden">
+        <h4>What pants type?</h4> 
+        <p>4/4</p> 
+        <div class="button-row">
+        <button><img src="img/pantspiece_brownpants.webp" alt="lego brown pants"></button>
+        <button><img src="img/pantspiece_blackpants.webp" alt="lego black pants"></button>
+        <button><img src="img/pantspiece_bluejeans.webp" alt="lego blue jeans"></button>
+        <button><img src="img/pantspiece_firefighterpants.webp" alt="lego firefighter pants"></button>
+        </div>
+    </section> 
+
+    <section id="final-screen" class="hidden">
+        <h2>Your minifigure!</h2> 
+        <div id="final-minifigure">
+            <img id="final-headwearpiece" src="img/empty.png" alt="headwearpiece">
+            <img id="final-headpiece" src="img/empty.png" alt="headpiece">
+            <img id="final-torsopiece" src="img/empty.png" alt="torsopiece">
+            <img id="final-pantspiece" src="img/empty.png" alt="pantspiece"> 
+        </div>
+        <button id="home-button">Back to the start!</button>
+    </section> 
+</div> 
+
+<script src="script.js"></script>
+</body>
+</html>
